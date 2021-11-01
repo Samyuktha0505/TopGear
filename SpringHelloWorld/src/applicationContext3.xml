@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    <bean id="student1"
+    class="com.wipro.springtopgear.ioc.assignment1.Student" 
+    scope="singleton">
+    <constructor-arg ref="test"/>
+     <property name="studentId" value="001" />
+     <property name="studentName" value="Steve" />
+    </bean>
+    
+     <bean id="student2-1"
+    class="com.wipro.springtopgear.ioc.assignment1.Student" 
+    scope="singleton">
+    <constructor-arg ref="test1"/>
+     <property name="studentId" value="002" />
+     <property name="studentName" value="Adam" />
+    </bean>
+    
+    <bean id="student2-2"
+    class="com.wipro.springtopgear.ioc.assignment1.Student" 
+    scope="singleton">
+    <constructor-arg ref="test2"/>
+     <property name="studentId" value="002" />
+     <property name="studentName" value="Adam" />
+    </bean>
+   
+   <bean id="test" class="com.wipro.springtopgear.ioc.assignment1.Test" scope="singleton">
+  	 <property name="testId" value="1" />
+     <property name="testTitle" value="core java test" />
+     <property name="testMarks" value="80" />
+   </bean>  
+   
+    <bean id="test1" class="com.wipro.springtopgear.ioc.assignment1.Test" scope="singleton">
+  	 <property name="testId" value="2" />
+     <property name="testTitle" value="Spring test" />
+     <property name="testMarks" value="50" />
+   </bean> 
+   
+    <bean id="test2" class="com.wipro.springtopgear.ioc.assignment1.Test" scope="singleton">
+  	 <property name="testId" value="3" />
+     <property name="testTitle" value="Spring aop test" />
+     <property name="testMarks" value="60" />
+   </bean>
+   
+    <bean id="myLoggerConfig" class="com.wipro.springtopgear.assignment1.MyLoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+</beans>
+
+
+
+
+

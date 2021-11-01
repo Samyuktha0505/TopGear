@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Define your beans here -->
+
+	<bean id="player1"
+		class="com.wipro.springtopgear.ioc.assignment2.Player"
+		scope="singleton">
+		<constructor-arg ref="country1" />
+		<property name="playerId" value="001" />
+		<property name="playerName" value="Virat Kohli" />
+	</bean>
+
+	<bean id="player2"
+		class="com.wipro.springtopgear.ioc.assignment2.Player"
+		scope="singleton">
+		<constructor-arg ref="country1" />
+		<property name="playerId" value="002" />
+		<property name="playerName" value="Ravindra Jadega" />
+	</bean>
+
+	<bean id="player3"
+		class="com.wipro.springtopgear.ioc.assignment2.Player"
+		scope="singleton">
+		<constructor-arg ref="country2" />
+		<property name="playerId" value="003" />
+		<property name="playerName" value="Babar" />
+	</bean>
+
+	<bean id="player4"
+		class="com.wipro.springtopgear.ioc.assignment2.Player"
+		scope="singleton">
+		<constructor-arg ref="country2" />
+		<property name="playerId" value="004" />
+		<property name="playerName" value="Asif" />
+	</bean>
+
+	<bean id="player5"
+		class="com.wipro.springtopgear.ioc.assignment2.Player"
+		scope="singleton">
+		<constructor-arg ref="country2" />
+		<property name="playerId" value="005" />
+		<property name="playerName" value="Shoaib Malik" />
+	</bean>
+
+	<bean id="country1"
+		class="com.wipro.springtopgear.ioc.assignment2.Country"
+		scope="singleton">
+		<property name="countryId" value="C001" />
+		<property name="countryName" value="India" />
+	</bean>
+
+	<bean id="country2"
+		class="com.wipro.springtopgear.ioc.assignment2.Country"
+		scope="singleton">
+		<property name="countryId" value="C002" />
+		<property name="countryName" value="Pakisthan" />
+	</bean>
+
+
+	<bean id="myLoggerConfig"
+		class="com.wipro.springtopgear.assignment1.MyLoggerConfig"
+		init-method="initLogger">
+		<property name="rootLoggerLevel" value="FINE" />
+		<property name="printedLoggerLevel" value="FINE" />
+	</bean>
+</beans>
+
+
+
+
+
